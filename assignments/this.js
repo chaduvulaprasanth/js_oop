@@ -135,24 +135,32 @@ obj.getThis4 = obj.getThis2.bind(obj);
 
 // Output
 obj.getThis();
+// Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
 
 // Output
 obj.getThis.call(a);
+// Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
 
 // Output
 obj.getThis2();
+// {getThis: ƒ, getThis2: ƒ, getThis3: ƒ, getThis4: ƒ}
 
 // Output
 obj.getThis2.call(a);
+// {a: "a"}
 
 // Output
 obj.getThis3();
+// Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
 
 // Output
 obj.getThis3.call(a);
+// Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
 
 // Output
 obj.getThis4();
+// {getThis: ƒ, getThis2: ƒ, getThis3: ƒ, getThis4: ƒ}
 
 // Output
 obj.getThis4.call(a);
+// {getThis: ƒ, getThis2: ƒ, getThis3: ƒ, getThis4: ƒ}
