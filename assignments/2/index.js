@@ -28,11 +28,9 @@ var vicky = makePerson('Vicky', 24);
 
 /*** CHALLENGE 1 of 3 ***/
 
-var personStore = {
-	// add code here
-
-
-};
+var personStore = Object.create({
+                greet: () => {return "hello"}
+            });
 
 // /********* Uncomment this line to test your work! *********/
 // personStore.greet(); // -> Logs 'hello'
