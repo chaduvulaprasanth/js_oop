@@ -28,9 +28,10 @@ var vicky = makePerson('Vicky', 24);
 
 /*** CHALLENGE 1 of 3 ***/
 
-var personStore = Object.create({
-                greet: () => {return "hello"}
-            });
+var obj = {
+          greet: () => {return "hello"}
+};
+var personStore = Object.create(obj);
 
 // /********* Uncomment this line to test your work! *********/
 // personStore.greet(); // -> Logs 'hello'
@@ -39,10 +40,12 @@ var personStore = Object.create({
 
 /*** CHALLENGE 2 of 3 ***/
 
+
 function personFromPersonStore(name, age) {
-	// add code here
-
-
+  var newObj = Object.create(obj);
+  newObj.name = name;
+  newObj.age = age;
+  return newObj;
 }
 
 var sandra = personFromPersonStore('Sandra', 26);
@@ -58,6 +61,8 @@ var sandra = personFromPersonStore('Sandra', 26);
 /*** CHALLENGE 3 of 3 ***/
 
 // add code here
+obj.introduce = function(){return `Hi, my name is ${this.name}`};
+var sandra = personFromPersonStore('Sandra', 26);
 
 // sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
 
@@ -73,7 +78,7 @@ var sandra = personFromPersonStore('Sandra', 26);
 
 function PersonConstructor() {
 	// add code here
-
+  this.greet = function(){return "hello"}
 
 }
 
@@ -88,7 +93,7 @@ var simon = new PersonConstructor;
 
 function personFromConstructor(name, age) {
 	// add code here
-
+  var 
 
 }
 
