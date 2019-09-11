@@ -5,9 +5,10 @@
 /*** CHALLENGE 1 of 1 ***/
 
 function makePerson(name, age) {
-	// add code here
-
-
+  var obj = {};
+  obj.name = name;
+  obj.age = age;
+  return obj;
 }
 
 var vicky = makePerson('Vicky', 24);
