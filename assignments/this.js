@@ -1,33 +1,34 @@
-console.log(this.document === document); // Output
+console.log(this.document === document); // Output true
 
-console.log(this === window); //Output
+console.log(this === window); //Output true
 
 var myFunction = function() {
   console.log(this);
 };
-myFunction(); // Output
+myFunction(); // OutputWindow {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
 
 function f1() {
   "use strict";
   return this;
 }
-console.log(f1() === window); //Output
+console.log(f1() === window); //Output false
 
 function foo() {
   console.log("Simple function call");
   console.log(this === window);
 }
 
-foo(); //Output ??
-console.log(this === window)(
-  // Output
-
+foo(); //Output ?? Simple function call
+                  // true
+console.log(this === window)
+  // Output true
+  
   // This for IIFE
   function() {
     console.log("Anonymous function invocation");
     console.log(this === window);
   }
-)(); //Output
+)(); //Output function statement requires function name
 
 // This for IIFE in strict mode
 function foo() {
@@ -36,13 +37,14 @@ function foo() {
   console.log(this === window);
 }
 
-foo(); // Output
+foo(); // Output Simple function call
+                // false
 
 var myObject = {};
 myObject.someMethod = function() {
   console.log(this);
 };
-myObject.someMethod(); //Value Of This
+myObject.someMethod(); //Value Of This {someMethod: ƒ}
 
 // This refers to the New Instance
 
@@ -56,7 +58,7 @@ function Person(fn, ln) {
 }
 
 let person = new Person("John", "Reed");
-person.displayName(); // Output
+person.displayName(); // Output Name: John Reed
 let person2 = new Person("Paul", "Adams");
 person2.displayName(); // Output
 
