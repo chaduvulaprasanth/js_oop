@@ -90,10 +90,15 @@ var simon = new PersonConstructor;
 
 
 /*** CHALLENGE 2 of 3 ***/
-
+var obj = {
+  greet: () => {return "hello"}
+};
 function personFromConstructor(name, age) {
 	// add code here
-  var 
+  var childobject = new Object(obj);
+  childobject.name = name;
+  childobject.age = age;
+  return childobject;
 
 }
 
@@ -109,6 +114,8 @@ var mike = personFromConstructor('Mike', 30);
 
 /*** CHALLENGE 3 of 3 ***/
 // add code here
+obj.introduce = function(){return `Hi, my name is ${this.name}`};
+var mike = personFromConstructor('Mike', 30);
 
 
 // mike.introduce(); // -> Logs 'Hi, my name is Mike'
@@ -121,14 +128,14 @@ var mike = personFromConstructor('Mike', 30);
 /*** CHALLENGE 1 of 3 ***/
 
 class PersonClass {
-	constructor() {
+	constructor(name) {
     // add code here
-
-
+    this.name = name;
 	}
-
 	// add code here
-
+    greet(){
+      return "hello";
+  }
 }
 
 
@@ -141,6 +148,11 @@ var george = new PersonClass;
 /*** CHALLENGE 2 of 3 ***/
 
 // add code here
+class DeveloperClass extends PersonClass {
+  introduce(){
+    return `Hello World, my name is ${this.name} `;
+  }
+}
 
 
 // /********* Uncomment these lines to test your work! *********/
@@ -168,7 +180,7 @@ function userFactory(name, score) {
   return user;
 }
 
-var adminFunctionStore /* Put code here */ ;
+var adminFunctionStore /* Put code here */ = Object.create(userFunctionStore);
 
 function adminFactory(name, score) {
   // Put code here
