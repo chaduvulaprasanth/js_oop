@@ -184,6 +184,8 @@ var adminFunctionStore /* Put code here */ = Object.create(userFunctionStore);
 
 function adminFactory(name, score) {
   // Put code here
+  var adminuser = userFactory(name,score)
+  return adminuser;
 }
 
 /* Put code here for a method called sharePublicMessage*/
