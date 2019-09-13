@@ -180,15 +180,22 @@ function userFactory(name, score) {
   return user;
 }
 
-var adminFunctionStore /* Put code here */ = Object.create(userFunctionStore);
+var adminFunctionStore /* Put code here */ = {};
+Object.setPrototypeOf(adminFunctionStore, userFunctionStore);
 
 function adminFactory(name, score) {
   // Put code here
-  var adminuser = userFactory(name,score)
-  return adminuser;
+  let admin = Object.create(adminFunctionStore);
+  admin.type = "Admin";
+  admin.name = name;
+  admin.score = score;
+  return admin;
 }
 
 /* Put code here for a method called sharePublicMessage*/
+adminFunctionStore.sharePublicMessage = function() {
+  console.log("Welcome Users!");
+}
 
 var adminFromFactory = adminFactory("Eva", 5);
 
